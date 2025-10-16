@@ -36,12 +36,13 @@ jobs:
       - name: Build project
         run: cd packages/platforms/react && yarn build
 
+      - name: Pack
+        run: npm pack
+
       - name: Archive build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: relation-graph-react-package
-          path: |
-            lib/react/
-            types/
+          path: ./*.tgz
           if-no-files-found: error
 
