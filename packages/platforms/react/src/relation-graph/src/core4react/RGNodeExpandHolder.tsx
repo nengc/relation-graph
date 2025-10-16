@@ -18,8 +18,16 @@ const RGNodeExpandHolder: React.FC<RGNodeExpandHolderProps> = ({expandButtonClas
       <span
         className={expandButtonClass}
         style={{ backgroundColor: color }}
-        onClick={!isTouchDevice ? handleAction : undefined}
-        onTouchEnd={isTouchDevice ? handleAction : undefined}
+        {...(isTouchDevice 
+          ? {
+              onClick: handleAction,
+              onTouchEnd: handleAction
+            } 
+          : {
+              onClickCapture: handleAction,
+              onTouchEnd: handleAction
+            }
+        )}
       ></span>
     </div>
   );
