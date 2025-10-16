@@ -34,7 +34,7 @@ jobs:
         run:  cd packages/platforms/react && yarn
 
       - name: Build project
-        run: cd packages/platforms/react && yarn build
+        run: cd packages/platforms/react && yarn build && yarn tsc
 
       - name: Pack
         run: npm pack
