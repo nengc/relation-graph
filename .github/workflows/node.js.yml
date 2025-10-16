@@ -39,6 +39,9 @@ jobs:
       - name: Pack
         run: npm pack
 
+      - name: Test
+        run: ls && ls packages/platforms/react
+
       - name: Archive build artifacts
         uses: actions/upload-artifact@v4
         with:
