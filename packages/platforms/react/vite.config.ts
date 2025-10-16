@@ -20,7 +20,7 @@ export default defineConfig({
       name: 'RelationGraph',
       // the proper extensions will be added
       fileName: 'relation-graph',
-      formats: ['es', 'cjs', 'udm'], // 输出 ESM 和 CommonJS 格式
+      formats: ['es', 'cjs', 'umd'], // 输出 ESM 和 CommonJS 格式
     },
     outDir: resolve(__dirname, '../../../lib/react'),
     emptyOutDir: false,
