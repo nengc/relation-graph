@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # 根据项目需求选择版本
+          node-version: '20' # 根据项目需求选择版本
           # cache: 'npm'
 
       - name: Install vite
