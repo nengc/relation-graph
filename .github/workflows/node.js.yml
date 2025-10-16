@@ -28,7 +28,7 @@ jobs:
         run: yarn
 
       - name: Build project
-        run: yarn build-react
+        run: cd packages/platforms/react && yarn build
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v4
