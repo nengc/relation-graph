@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Install react dependencies
+        run:  cd packages/platforms/react && yarn
+
       - name: Build project
         run: cd packages/platforms/react && yarn build
 
