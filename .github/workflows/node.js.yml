@@ -24,6 +24,9 @@ jobs:
           node-version: '18' # 根据项目需求选择版本
           # cache: 'npm'
 
+      - name: Install vite
+        run: npm install vite@3.2.0 -g
+
       - name: Install dependencies
         run: yarn
 
