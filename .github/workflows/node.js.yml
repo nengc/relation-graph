@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: packages/platforms/react # 设置工作目录
+        working-directory: ./ # packages/platforms/react # 设置工作目录
 
     steps:
       - name: Checkout repository
@@ -25,19 +25,17 @@ jobs:
           # cache: 'npm'
 
       - name: Install dependencies
-        run: npm i --force
+        run: yarn
 
       - name: Build project
-        run: npm run build
-
-      - name: Generate type definitions
-        run: npm run tsc
+        run: yarn build-react
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: relation-graph-react-package
           path: |
-            packages/platforms/react/dist/
-            packages/platforms/react/types/
-          retention-days: 7
+            lib/react/
+            types/
+          if-no-files-found: error
+
